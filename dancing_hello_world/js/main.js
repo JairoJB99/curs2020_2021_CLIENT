@@ -1,6 +1,4 @@
 'use strict'
-let myApp
-let stateApp="stop"
 
 let inicia = function(el) {
     // DOM is loaded and ready for manipulation here
@@ -33,8 +31,8 @@ let inicia = function(el) {
 let auxInit = inicia(document.getElementById("ball")); // guardamos el valor que retorne la funcion inicia, para pasarsela como el valor dw antes global
 
 let start =function start(){
-    stateApp="run"
-    myApp=setInterval(auxInit,50);
+    let stateApp="run"
+    let myApp=setInterval(auxInit,50);
     stopBall(stateApp, myApp);
 }
 docReady(start);
