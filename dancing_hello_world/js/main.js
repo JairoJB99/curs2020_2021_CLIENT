@@ -2,7 +2,7 @@
 import docReady from './core/core.js'
 import stopBall from './controlers/stopball'
 
- let inicia = (function(el) {
+ export let inicia = (function(el) {
     // DOM is loaded and ready for manipulation here
     let speed = 15; //1 to 100
     let incX = speed * (Math.round(Math.random())?1:-1);
@@ -45,6 +45,4 @@ import stopBall from './controlers/stopball'
     return { start: start, toggle: toggle}
 })();
 
-docReady(start);
-
-export default {inicia};
+docReady(inicia.start);
