@@ -28,18 +28,17 @@ import docReady from './core/core.js'
             incY = (-1)*incY;
     }
 
-    let start = (function(){
+    let start = function(){
         stateApp= "run";
         myApp=setInterval(dw(document.getElementById("ball")),50);
-    })
-    let stop = (function(){
+    }
+    let stop = function(){
         stateApp= "stop";
         myApp=setInterval(dw(document.getElementById("ball")),50);
-    })
+    }
 
     let toggle = function(){
         (stateApp==="run") ? stop(): start()
-
     }
     return { start: start, toggle: toggle}
 })();
