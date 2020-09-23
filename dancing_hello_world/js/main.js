@@ -28,10 +28,12 @@ import docReady from './core/core'
     };
 
     let start = function(){
+        console.log("Arrancando");
         stateApp= "run";
         myApp=setInterval(dw(document.getElementById("ball")),50);
     }
     let stop = function(){
+        console.log("Parando");
         stateApp= "stop";
         clearInterval(myApp);
     }
