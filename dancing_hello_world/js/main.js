@@ -2,7 +2,7 @@
 import docReady from './core/core'
 import stopBall from './controlers/stopball'
 
-export let inicia = (function () {
+let inicia = (function () {
     // DOM is loaded and ready for manipulation here
 
     let stateApp = "run"
@@ -35,7 +35,7 @@ export let inicia = (function () {
         return aux;
     };
 
-    stopBall();
+    console.log(dw(document.getElementById("ball")));
 
     let start = function () {
         console.log("Arrancando");
@@ -54,3 +54,5 @@ export let inicia = (function () {
 })();
 
 docReady(inicia.start);
+
+export{inicia};
