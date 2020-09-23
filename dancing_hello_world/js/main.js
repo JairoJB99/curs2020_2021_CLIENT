@@ -1,7 +1,7 @@
 'use strict'
-import docReady from './core/core.js'
+import docReady from './core/core'
 
- export let inicia = (function() {
+ export let inicia = (function(el) {
     // DOM is loaded and ready for manipulation here
     let speed = 15; //1 to 100
     let incX = speed * (Math.round(Math.random())?1:-1);
