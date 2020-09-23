@@ -45,6 +45,7 @@ export let inicia = (function () {
         clearInterval(myApp);
     }
     let toggle = function () {
+        console.log(stateApp);
         (stateApp === "run") ? stop() : start()
     }
     return { start: start, toggle: toggle }
