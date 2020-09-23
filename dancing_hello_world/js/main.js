@@ -1,7 +1,7 @@
 'use strict'
 import docReady from './core/core.js'
 
- export let inicia = (function(el) {
+ export let inicia = (function() {
     // DOM is loaded and ready for manipulation here
     let speed = 15; //1 to 100
     let incX = speed * (Math.round(Math.random())?1:-1);
@@ -10,7 +10,7 @@ import docReady from './core/core.js'
     let stateApp="run"
     let myApp;
 
-    let dw = function(){
+    let dw = function(el){
     
         // declaramos x y (antes no estaban)
         let x =  el.style.left?parseInt(el.style.left,10):350;
