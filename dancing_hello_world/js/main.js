@@ -1,14 +1,18 @@
 'use strict'
+import docReady from './core/core.js'
+import stopBall from './controlers/stopball'
 
-let inicia = function(el) {
+export let inicia = (function(el) {
     // DOM is loaded and ready for manipulation here
     let speed = 15; //1 to 100
     let incX = speed * (Math.round(Math.random())?1:-1);
     let incY = speed * (Math.round(Math.random())?1:-1);
     //let el=document.getElementById("el");
+    let stateApp="run"
+    let stateApp="stop"
+    let myApp;
 
-    // declaramos la variable dw (antes no estaba)
-    let dw = function danceWorld(){
+    let dw = function(){
     
         // declaramos x y (antes no estaban)
         let x =  el.style.left?parseInt(el.style.left,10):350;
@@ -25,14 +29,21 @@ let inicia = function(el) {
         if (((y+incY) > (window.innerHeight-40)) || ((y+incY) <= 0))
             incY = (-1)*incY;
     }
-    return dw;    // retornamos el valor de dw
-};
 
-let auxInit = inicia(document.getElementById("ball")); // guardamos el valor que retorne la funcion inicia, para pasarsela como el valor dw antes global
+    let start = (function(){
+        stateApp= "run";
+        myApp=setInterval(dw(document.getElementById("ball")),50);
+    })
+    let stop = (function(){
+        stateApp= "stop";
+        myApp=setInterval(dw(document.getElementById("ball")),50);
+    })
 
-let start =function start(){
-    let stateApp="run"
-    let myApp=setInterval(auxInit,50);
-    stopBall(stateApp, myApp);
-}
+    let toggle = function(){
+        (stateApp==="run") ? stop(): start()
+
+    }
+    return { start: start, toggle: toggle}
+})();
+
 docReady(start);
