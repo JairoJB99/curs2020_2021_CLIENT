@@ -12,12 +12,15 @@ export let inicia = (function () {
         let speed = 15; //1 to 100
         let incX = speed * (Math.round(Math.random()) ? 1 : -1);
         let incY = speed * (Math.round(Math.random()) ? 1 : -1);
+        console.log(incX);
+        console.log(incY);
 
         let aux = function () {
             // declaramos x y (antes no estaban)
             let x = el.style.left ? parseInt(el.style.left, 10) : 350;
             let y = el.style.top ? parseInt(el.style.top, 10) : 400;
-
+            console.log(x);
+            console.log(y);
             el.style.left = x + incX + "px";
             el.style.top = y + incY + "px";
 
@@ -28,7 +31,6 @@ export let inicia = (function () {
             //Detect if we reach Y coordinates limits
             if (((y + incY) > (window.innerHeight - 40)) || ((y + incY) <= 0))
                 incY = (-1) * incY;
-
         };
         return aux;
     };
@@ -39,15 +41,15 @@ export let inicia = (function () {
         console.log("Arrancando");
         stateApp = "run";
         myApp = setInterval(dw(document.getElementById("ball")), 50);
-    }
+    };
     let stop = function () {
         stateApp = "stop";
         clearInterval(myApp);
-    }
+    };
     let toggle = function () {
         console.log(stateApp);
         (stateApp === "run") ? stop() : start()
-    }
+    };
     return { start: start, toggle: toggle }
 })();
 
