@@ -25,6 +25,8 @@ import docReady from './core/core'
         //Detect if we reach Y coordinates limits
         if (((y+incY) > (window.innerHeight-40)) || ((y+incY) <= 0))
             incY = (-1)*incY;
+
+        return dw;
     };
 
     let start = function(){
