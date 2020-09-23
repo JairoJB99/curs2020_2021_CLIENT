@@ -29,6 +29,7 @@ import docReady from './core/core'
         return dw;
     };
     let aux = document.getElementById("ball");
+    console.log(aux.innerHTML);
 
     let start = function(){
         console.log("Arrancando");
