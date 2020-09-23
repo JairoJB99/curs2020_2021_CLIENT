@@ -6,6 +6,6 @@
         fn();
         //setTimeout(fn, 1);
     } else {
-        document.addEventListener("DOMContentLoaded", fn);
+        document.addEventListener("DOMContentLoaded", fn); //
     }
 }    
