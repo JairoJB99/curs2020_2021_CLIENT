@@ -9,7 +9,6 @@ export let inicia = (function(el) {
     let incY = speed * (Math.round(Math.random())?1:-1);
     //let el=document.getElementById("el");
     let stateApp="run"
-    let stateApp="stop"
     let myApp;
 
     let dw = function(){
