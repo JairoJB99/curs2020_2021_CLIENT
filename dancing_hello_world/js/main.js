@@ -8,7 +8,7 @@ import docReady from './core/core'
     let incY = speed * (Math.round(Math.random())?1:-1);
     let stateApp="run"
     let myApp;
-
+    
     let dw = function(el){
     
         // declaramos x y (antes no estaban)
@@ -28,23 +28,22 @@ import docReady from './core/core'
 
         return dw;
     };
+    let aux = document.getElementById("ball");
 
     let start = function(){
         console.log("Arrancando");
         stateApp= "run";
-        myApp=setInterval(dw(document.getElementById("ball")),50);
+        myApp=setInterval(dw(aux),50);
     }
     let stop = function(){
         console.log("Parando");
         stateApp= "stop";
         clearInterval(myApp);
     }
-
     let toggle = function(){
         (stateApp==="run") ? stop(): start()
     }
     return { start: start, toggle: toggle}
-    //return { start: start(), toggle: toggle()}
 })();
 
 docReady(inicia.start);
