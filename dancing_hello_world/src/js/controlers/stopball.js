@@ -1,5 +1,5 @@
 'use strict'
-import {inicia} from '../main.js'
+import {inicia} from '../../main.js'
 
 export default (function() {
     document.body.onkeyup = function(e){

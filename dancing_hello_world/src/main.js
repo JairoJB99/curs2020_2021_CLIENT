@@ -1,6 +1,9 @@
 'use strict'
-import { docReady } from './core/core.js'
-import './controlers/stopball.js'
+import './css/style.css'
+
+
+import { docReady } from './js/core/core.js'
+import './js/controlers/stopball.js'
 
 let inicia = (function () {
     // DOM is loaded and ready for manipulation here
@@ -35,7 +38,6 @@ let inicia = (function () {
         myAppInterval = setInterval(moviment, 50);
     };
     let stop = function () {
-        console.log("parada");
         stateApp = "stop";
         clearInterval(myAppInterval);
     };
