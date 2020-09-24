@@ -1,12 +1,11 @@
 'use strict'
 import docReady from './core/core'
-import stopBall from './controlers/stopball'
 
 let inicia = (function () {
     // DOM is loaded and ready for manipulation here
 
     let stateApp = "run"
-    let myApp;
+    let myAppInterval;
 
     let dw = function (el) {
         let speed = 15; //1 to 100
@@ -40,11 +39,11 @@ let inicia = (function () {
     let start = function () {
         console.log("Arrancando");
         stateApp = "run";
-        myApp = setInterval(dw(document.getElementById("ball")), 50);
+        myAppInterval = setInterval(dw(document.getElementById("ball")), 50);
     };
     let stop = function () {
         stateApp = "stop";
-        clearInterval(myApp);
+        clearInterval(myAppInterval);
     };
     let toggle = function () {
         console.log(stateApp);

@@ -1,5 +1,5 @@
  'use strict'
- export default function docReady(fn) {
+function docReady(fn) {
     // see if DOM is already available
     if (document.readyState === "complete" || document.readyState === "interactive") {
         // call on next available tick
@@ -9,3 +9,5 @@
         document.addEventListener("DOMContentLoaded", fn); //
     }
 }    
+
+export {docReady}
