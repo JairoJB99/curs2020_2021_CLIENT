@@ -49,4 +49,4 @@ let inicia = (function () {
 
 docReady(inicia.start);
 
-export{inicia};
+export default {inicia};
