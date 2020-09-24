@@ -2,7 +2,7 @@
 import docReady from './core/core.js'
 import './controlers/stopball.js'
 
-export default inicia = (function () {
+let inicia = (function () {
     // DOM is loaded and ready for manipulation here
 
     let stateApp = "run"
@@ -48,3 +48,5 @@ export default inicia = (function () {
 })();
 
 docReady(inicia.start);
+
+export {inicia};
