@@ -35,7 +35,7 @@ let inicia = (function () {
 
     let start = function () {
         stateApp = "run";
-        myAppInterval = setInterval(auxDW), 50);
+        myAppInterval = setInterval(auxDW, 50);
     };
     let stop = function () {
         console.log("parada");
