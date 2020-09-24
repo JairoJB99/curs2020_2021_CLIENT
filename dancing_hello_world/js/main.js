@@ -32,8 +32,6 @@ let inicia = (function () {
         return aux;
     };
 
-   // console.log(dw(document.getElementById("ball")));
-
     let start = function () {
         stateApp = "run";
         myAppInterval = setInterval(dw(document.getElementById("ball")), 50);
