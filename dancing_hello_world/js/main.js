@@ -15,8 +15,8 @@ let inicia = (function () {
 
     let moviment = function () {
         // declaramos x y (antes no estaban)
-        let x = element.style.left ? parseInt(el.style.left, 10) : 350;
-        let y = element.style.top ? parseInt(el.style.top, 10) : 400;
+        let x = element.style.left ? parseInt(element.style.left, 10) : 350;
+        let y = element.style.top ? parseInt(element.style.top, 10) : 400;
 
         element.style.left = x + incX + "px";
         element.style.top = y + incY + "px";
