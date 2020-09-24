@@ -1,5 +1,5 @@
 'use strict'
-import {docReady} from './core/core.js'
+import { docReady } from './core/core.js'
 import './controlers/stopball.js'
 
 let inicia = (function () {
@@ -9,33 +9,30 @@ let inicia = (function () {
     let myAppInterval;
     let element = document.getElementById("ball");
 
-    let dw = function () {
-        let speed = 15; //1 to 100
-        let incX = speed * (Math.round(Math.random()) ? 1 : -1);
-        let incY = speed * (Math.round(Math.random()) ? 1 : -1);
+    let speed = 15; //1 to 100
+    let incX = speed * (Math.round(Math.random()) ? 1 : -1);
+    let incY = speed * (Math.round(Math.random()) ? 1 : -1);
 
-        let aux = function () {
-            // declaramos x y (antes no estaban)
-            let x = element.style.left ? parseInt(el.style.left, 10) : 350;
-            let y = element.style.top ? parseInt(el.style.top, 10) : 400;
+    let moviment = function () {
+        // declaramos x y (antes no estaban)
+        let x = element.style.left ? parseInt(el.style.left, 10) : 350;
+        let y = element.style.top ? parseInt(el.style.top, 10) : 400;
 
-            element.style.left = x + incX + "px";
-            element.style.top = y + incY + "px";
+        element.style.left = x + incX + "px";
+        element.style.top = y + incY + "px";
 
-            //Detect if we reach X coordinates limits
-            if (((x + incX) > (window.innerWidth - 40)) || ((x + incX) <= 0))
-                incX = (-1) * incX;
+        //Detect if we reach X coordinates limits
+        if (((x + incX) > (window.innerWidth - 40)) || ((x + incX) <= 0))
+            incX = (-1) * incX;
 
-            //Detect if we reach Y coordinates limits
-            if (((y + incY) > (window.innerHeight - 40)) || ((y + incY) <= 0))
-                incY = (-1) * incY;
-        };
-        return aux;
+        //Detect if we reach Y coordinates limits
+        if (((y + incY) > (window.innerHeight - 40)) || ((y + incY) <= 0))
+            incY = (-1) * incY;
     };
 
     let start = function () {
         stateApp = "run";
-        myAppInterval = setInterval(dw, 50);
+        myAppInterval = setInterval(moviment, 50);
     };
     let stop = function () {
         console.log("parada");
@@ -50,4 +47,4 @@ let inicia = (function () {
 
 docReady(inicia.start);
 
-export {inicia};
+export { inicia };
