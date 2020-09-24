@@ -7,6 +7,7 @@ let inicia = (function () {
 
     let stateApp = "run"
     let myAppInterval;
+    let auxDW = dw(document.getElementById("ball"));
 
     let dw = function (el) {
         let speed = 15; //1 to 100
@@ -34,7 +35,7 @@ let inicia = (function () {
 
     let start = function () {
         stateApp = "run";
-        myAppInterval = setInterval(dw(document.getElementById("ball")), 50);
+        myAppInterval = setInterval(auxDW), 50);
     };
     let stop = function () {
         console.log("parada");
