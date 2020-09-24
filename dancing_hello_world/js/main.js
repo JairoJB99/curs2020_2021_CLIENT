@@ -38,6 +38,7 @@ let inicia = (function () {
         myAppInterval = setInterval(dw(document.getElementById("ball")), 50);
     };
     let stop = function () {
+        console.log("parada");
         stateApp = "stop";
         clearInterval(myAppInterval);
     };
