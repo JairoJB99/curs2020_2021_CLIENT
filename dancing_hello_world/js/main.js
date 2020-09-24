@@ -7,20 +7,20 @@ let inicia = (function () {
 
     let stateApp = "run"
     let myAppInterval;
-    let auxDW = dw(document.getElementById("ball"));
+    let element = dw(document.getElementById("ball"));
 
-    let dw = function (el) {
+    let dw = function () {
         let speed = 15; //1 to 100
         let incX = speed * (Math.round(Math.random()) ? 1 : -1);
         let incY = speed * (Math.round(Math.random()) ? 1 : -1);
 
         let aux = function () {
             // declaramos x y (antes no estaban)
-            let x = el.style.left ? parseInt(el.style.left, 10) : 350;
-            let y = el.style.top ? parseInt(el.style.top, 10) : 400;
+            let x = element.style.left ? parseInt(el.style.left, 10) : 350;
+            let y = element.style.top ? parseInt(el.style.top, 10) : 400;
 
-            el.style.left = x + incX + "px";
-            el.style.top = y + incY + "px";
+            element.style.left = x + incX + "px";
+            element.style.top = y + incY + "px";
 
             //Detect if we reach X coordinates limits
             if (((x + incX) > (window.innerWidth - 40)) || ((x + incX) <= 0))
