@@ -11,15 +11,12 @@ let inicia = (function () {
         let speed = 15; //1 to 100
         let incX = speed * (Math.round(Math.random()) ? 1 : -1);
         let incY = speed * (Math.round(Math.random()) ? 1 : -1);
-        console.log(incX);
-        console.log(incY);
 
         let aux = function () {
             // declaramos x y (antes no estaban)
             let x = el.style.left ? parseInt(el.style.left, 10) : 350;
             let y = el.style.top ? parseInt(el.style.top, 10) : 400;
-            console.log(x);
-            console.log(y);
+
             el.style.left = x + incX + "px";
             el.style.top = y + incY + "px";
 
@@ -34,10 +31,9 @@ let inicia = (function () {
         return aux;
     };
 
-    console.log(dw(document.getElementById("ball")));
+   // console.log(dw(document.getElementById("ball")));
 
     let start = function () {
-        console.log("Arrancando");
         stateApp = "run";
         myAppInterval = setInterval(dw(document.getElementById("ball")), 50);
     };
@@ -46,7 +42,6 @@ let inicia = (function () {
         clearInterval(myAppInterval);
     };
     let toggle = function () {
-        console.log(stateApp);
         (stateApp === "run") ? stop() : start()
     };
     return { start: start, toggle: toggle }
