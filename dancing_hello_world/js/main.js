@@ -1,5 +1,6 @@
 'use strict'
-import docReady from './core/core'
+import docReady from './core/core.js'
+import './controlers/stopball.js'
 
 let inicia = (function () {
     // DOM is loaded and ready for manipulation here
