@@ -10,4 +10,4 @@ function docReady(fn) {
     }
 }    
 
-export {docReady}
+export default {docReady}
